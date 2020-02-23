@@ -33,3 +33,8 @@ with open("election_data.csv", "r") as csvfile:
     for row in csvreader:
         #calculate total votes
         total_votes +=1
+        #set candidate variables
+        correy = 0
+        khan = 0
+        li = 0 
+        otooley = 0 
