@@ -48,11 +48,17 @@ with open("election_data.csv", "r") as csvfile:
 candidates =["Correy", "Khan", "Li", "O'Tooley"]
 votes_for_candidates = [correy, khan, li, otooley]
 
-#combine both lists in a dictionary 
+#combine both lists in a defined dictionary 
 #combine candidates and votes_for_candidates lists 
 #output should be candidate names and their respective total votes
 help(dict)
 help(zip)
 candidate_votes_dict = dict(zip(candidates,votes_for_candidates))
 candidate_votes_dict
-        
+#get function help to determine candidate winner 
+help(candidate_votes_dict.get)
+#calcualte the candidate winner using the max and get functions
+winner = max(candidate_votes_dict, key = candidate_votes_dict.get)
+
+
+
