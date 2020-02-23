@@ -23,3 +23,13 @@ correy = 0
 khan = 0
 li = 0 
 otooley = 0 
+
+with open("election_data.csv", "r") as csvfile:
+    #create path
+    csvreader = csv.reader(csvfile)
+    #skip column labels
+    header = next(csvreader, None)
+    #iterate through rows in budget data
+    for row in csvreader:
+        #calculate total votes
+        total_votes +=1
