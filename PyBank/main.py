@@ -20,32 +20,43 @@ import csv
 budget_df=os.path.join("..", "PyBank", "budget_data.csv")
 budget_df
 
-# create empty list for total months 
-months []
-total_pl = []
-total_months = 0
-total_profit = 0 
+#create lists
+total_months = []
+total_profit = []
+monthly_change = []
 
-# open csv in reader mode 
 with open("budget_data.csv", "r") as csvfile:
-    #store budget_df data in csvreader 
+    
+    #create a path
     csvreader = csv.reader(csvfile, delimiter = ",")
+    
     #skip column labels
-    next(csvreader, None)
-    #iterate through monthly data and calculate 
-    for months in csvreader:
-        total_months += 1
-    print(f"Total Months: {str(total_months)}")
-# Total Months: 86 
+    header = next(csvreader, None)
+    
+    #iterate through rows in budget data
+    for row in csvreader:
+        
+        #append months and profit lists 
+        total_months.append(row[0])
+        total_profit.append(int(row[1]))
+        
+    #iterate through profits to get monthly changes
+    for i in range(len(total_profit)-1):
+        monthly_change.append(total_profit[i+1]-total_profit[i])
 
-# Total profits
-with open("budget_data.csv", "r") as csvfile:
-    #store budget_df data in csvreader 
-    csvreader = csv.reader(csvfile, delimiter = ",")
-    #skip column labels
-    next(csvreader, None)
-    #iterate through monthly data
-    for total_pl in csvreader:
-        total_profit = total_profit + (int(total_pl[1]))
-    print(f"Total Profit: {int(total_profit)}")
-# Total Profit: 38382664
+#calculate min and max values for monthly changes
+max_decrease_val = min(monthly_change)
+max_increase_val = max(monthly_change)
+
+#calculate the greatest increase and decrease in profits (date and amount) over the entire period
+max_increase_month = monthly_change.index(max(monthly_change)) + 1
+max_decrease_month = monthly_change.index(min(monthly_change)) + 1 
+
+#print statements
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months: {len(total_months)}")
+print(f"Total: ${sum(total_profit)}")
+print(f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}")
+print(f"Greatest Increase in Profits: {total_months[max_increase_month]} (${(str(max_increase_val))})")
+print(f"Greatest Decrease in Profits: {total_months[max_decrease_month]} (${(str(max_decrease_val))})")
