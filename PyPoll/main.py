@@ -29,7 +29,7 @@ with open("election_data.csv", "r") as csvfile:
     csvreader = csv.reader(csvfile)
     #skip column labels
     header = next(csvreader, None)
-    #iterate through rows in budget data
+    #iterate through rows in election data
     for row in csvreader:
         #calculate total votes
         total_votes +=1
@@ -42,5 +42,11 @@ with open("election_data.csv", "r") as csvfile:
             li +=1
         elif row[2] == "O'Tooley":
             otooley +=1
+
+#make list for the candidates ["Correy", "Khan", "Li", "O'Tooley"]
+#and make list for total candidate votes from the above variables
+candidates =["Correy", "Khan", "Li", "O'Tooley"]
+votes_for_candidates = [correy, khan, li, otooley]
+
 
         
