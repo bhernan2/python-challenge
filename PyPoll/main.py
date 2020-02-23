@@ -33,8 +33,14 @@ with open("election_data.csv", "r") as csvfile:
     for row in csvreader:
         #calculate total votes
         total_votes +=1
-        #set candidate variables
-        correy = 0
-        khan = 0
-        li = 0 
-        otooley = 0 
+        # calculations for if the candidates are found in column, count the times they appear 
+        if row[2] == "Correy":
+            correy +=1
+        elif row[2] == "Khan":
+            khan +=1
+        elif row[2] == "Li":
+            li +=1
+        elif row[2] == "O'Tooley":
+            otooley +=1
+
+        
