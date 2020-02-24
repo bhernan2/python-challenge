@@ -68,7 +68,18 @@ khan_percent = (khan/total_votes)*100
 li_percent = (li/total_votes)*100
 otooley_percent = (otooley/total_votes)*100
 
-
+#print statements
+print(f"Election Results")
+print(f"----------------------------")
+print(f"Total Votes: {total_votes}")
+print(f"----------------------------")
+print(f"Correy: {correy_percent: .3f}% ({correy})")
+print(f"Khan: {khan_percent: .3f}% ({khan})")
+print(f"Li: {li_percent: .3f}% ({li})")
+print(f"O'Tooley: {otooley_percent:.3f}% ({otooley})")
+print(f"----------------------------")
+print(f"Winner: {winner}")
+print(f"----------------------------")
 
 
 
