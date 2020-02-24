@@ -55,10 +55,20 @@ help(dict)
 help(zip)
 candidate_votes_dict = dict(zip(candidates,votes_for_candidates))
 candidate_votes_dict
+
 #get function help to determine candidate winner 
 help(candidate_votes_dict.get)
+
 #calcualte the candidate winner using the max and get functions
 winner = max(candidate_votes_dict, key = candidate_votes_dict.get)
+
+#calculate candidate vote percentages
+correy_percent = (correy/total_votes)*100
+khan_percent = (khan/total_votes)*100
+li_percent = (li/total_votes)*100
+otooley_percent = (otooley/total_votes)*100
+
+
 
 
 
