@@ -54,9 +54,29 @@ max_decrease_month = monthly_change.index(min(monthly_change)) + 1
 
 #print statements
 print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {len(total_months)}")
+print(f"----------------------------")
+print(f"Total Months: {len(total_months)}git ")
 print(f"Total: ${sum(total_profit)}")
 print(f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}")
 print(f"Greatest Increase in Profits: {total_months[max_increase_month]} (${(str(max_increase_val))})")
 print(f"Greatest Decrease in Profits: {total_months[max_decrease_month]} (${(str(max_decrease_val))})")
+
+#export a text file with the results
+output_path = os.path.join("Budget_Results.txt")
+output_path
+
+with open("Budget_Results.txt","w") as file:
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Total Months: {len(total_months)}")
+    file.write("\n")
+    file.write(f"Total: ${sum(total_profit)}")
+    file.write("\n")
+    file.write(f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {total_months[max_increase_month]} (${(str(max_increase_val))})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {total_months[max_decrease_month]} (${(str(max_decrease_val))})")
+
