@@ -81,30 +81,5 @@ print(f"----------------------------")
 print(f"Winner: {winner}")
 print(f"----------------------------")
 
-#export a text file with the results
-output_path = os.path.join("Election_Results.txt")
-output_path
 
-with open("Election_Results.txt","w", newline='') as file:
-    file.write(f"Election Results")
-    file.write("\n")
-    file.write(f"----------------------------")
-    file.write("\n")
-    file.write(f"Total Votes: {total_votes}")
-    file.write("\n")
-    file.write(f"----------------------------")
-    file.write("\n")
-    file.write(f"Correy: {correy_percent:.3f}% ({correy})")
-    file.write("\n")
-    file.write(f"Khan: {khan_percent:.3f}% ({khan})")
-    file.write("\n")
-    file.write(f"Li: {li_percent:.3f}% ({li})")
-    file.write("\n")
-    file.write(f"O'Tooley: {otooley_percent:.3f}% ({otooley})")
-    file.write("\n")
-    file.write(f"----------------------------")
-    file.write("\n")
-    file.write(f"Winner: {winner}")
-    file.write("\n")
-    file.write(f"----------------------------")
 
